@@ -1,0 +1,99 @@
+{
+  "adult": false,
+  "backdrop_path": "/cl8NLaoztP877hTSYSy6YIUkChF.jpg",
+  "created_by": [],
+  "episode_run_time": [
+    11
+  ],
+  "first_air_date": "2022-09-26",
+  "genres": [
+    {
+      "id": 10764,
+      "name": "Reality"
+    }
+  ],
+  "homepage": "https://www.goplay.be/now-what",
+  "id": 210855,
+  "in_production": true,
+  "languages": [
+    "nl"
+  ],
+  "last_air_date": "2022-12-11",
+  "last_episode_to_air": {
+    "air_date": "2022-12-11",
+    "episode_number": 77,
+    "id": 4013873,
+    "name": "Episode 77",
+    "overview": "",
+    "production_code": "",
+    "runtime": 11,
+    "season_number": 1,
+    "show_id": 210855,
+    "still_path": null,
+    "vote_average": 0.0,
+    "vote_count": 0
+  },
+  "name": "Now what",
+  "next_episode_to_air": {
+    "air_date": "2022-12-12",
+    "episode_number": 78,
+    "id": 4013874,
+    "name": "Episode 78",
+    "overview": "",
+    "production_code": "",
+    "runtime": 11,
+    "season_number": 1,
+    "show_id": 210855,
+    "still_path": null,
+    "vote_average": 0.0,
+    "vote_count": 0
+  },
+  "networks": [
+    {
+      "id": 5708,
+      "name": "GoPlay",
+      "logo_path": "/kTehfjtP24Nx0qhJNODfo3h3nz5.png",
+      "origin_country": "BE"
+    }
+  ],
+  "number_of_episodes": 90,
+  "number_of_seasons": 1,
+  "origin_country": [
+    "BE"
+  ],
+  "original_language": "nl",
+  "original_name": "Now what",
+  "overview": "7 young people co-house in Antwerp. They are all at the beginning of their adult life and have to decide what that should look like.",
+  "popularity": 1242.886,
+  "poster_path": "/89kiLK0S7Rbfjorvhm0vxTAgAH3.jpg",
+  "production_companies": [],
+  "production_countries": [
+    {
+      "iso_3166_1": "BE",
+      "name": "Belgium"
+    }
+  ],
+  "seasons": [
+    {
+      "air_date": "2022-09-26",
+      "episode_count": 90,
+      "id": 309846,
+      "name": "Season 1",
+      "overview": "",
+      "poster_path": null,
+      "season_number": 1
+    }
+  ],
+  "spoken_languages": [
+    {
+      "english_name": "Dutch",
+      "iso_639_1": "nl",
+      "name": "Nederlands"
+    }
+  ],
+  "status": "Returning Series",
+  "tagline": "",
+  "type": "Reality",
+  "vote_average": 4.4,
+  "vote_count": 5
+}

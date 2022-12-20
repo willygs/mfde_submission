@@ -2,7 +2,7 @@ import 'package:core/styles/colors.dart';
 import 'package:core/utils/routes.dart';
 
 import 'package:movie/presentation/pages/home_movie_page.dart';
-import '../../presentation/pages/home_tv_page.dart';
+import 'package:tv/presentation/pages/home_tv_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {

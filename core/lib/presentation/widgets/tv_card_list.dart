@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core/styles/text_styles.dart';
 import 'package:core/utils/constants.dart';
+import 'package:core/utils/routes.dart';
 import '../../domain/entities/tv.dart';
-import '../../presentation/pages/tv_detail_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -17,7 +17,7 @@ class TvCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 4),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, TvDetailPage.ROUTE_NAME,
+          Navigator.pushNamed(context, TV_DETAIL_ROUTE,
               arguments: tv.id);
         },
         child: Stack(
@@ -56,15 +56,15 @@ class TvCard extends StatelessWidget {
                 bottom: 16,
               ),
               child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
                 child: CachedNetworkImage(
                   imageUrl: '$BASE_IMAGE_URL${tv.posterPath}',
                   width: 80,
-                  placeholder: (context, url) =>  Center(
-                    child: CircularProgressIndicator(),
+                  placeholder: (context, url) => const  Center(
+                    child:  CircularProgressIndicator(),
                   ),
-                  errorWidget: (context, url, error) =>   Icon(  Icons.error),
+                  errorWidget: (context, url, error) => const  Icon(  Icons.error),
                 ),
-                borderRadius: const BorderRadius.all(Radius.circular(8)),
               ),
             ),
           ],

@@ -1,4 +1,3 @@
-import 'package:core/utils/state_enum.dart';
 import 'package:core/utils/utils.dart';
 
 
@@ -14,6 +13,7 @@ class WatchlistMoviesPage extends StatefulWidget {
   const WatchlistMoviesPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _WatchlistMoviesPageState createState() => _WatchlistMoviesPageState();
 }
 
@@ -33,6 +33,7 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
     routeObserver.subscribe(this, ModalRoute.of(context)!);
   }
 
+  @override
   void didPopNext() {
     context.read<WatchlistMovieBloc>().add(OnWatchlistMovies());
   }

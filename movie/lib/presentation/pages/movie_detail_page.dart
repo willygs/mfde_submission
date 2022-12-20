@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core/core.dart';
 import 'package:core/utils/routes.dart';
@@ -13,7 +15,7 @@ import 'package:movie/presentation/bloc/watchlist/watchlist_movies_bloc.dart';
 
 class MovieDetailPage extends StatefulWidget {
   final int id;
-  MovieDetailPage({required this.id});
+  const MovieDetailPage({super.key, required this.id});
 
   @override
   _MovieDetailPageState createState() => _MovieDetailPageState();
@@ -41,8 +43,6 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
               }
               return false;
             });
-      print('isMovieWathsList');
-        print(isMovieWatchsList);
     return Scaffold(
       body: BlocBuilder<DetailMovieBloc, DetailMovieState>(
         builder: (context, state) {
@@ -59,8 +59,10 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                 isMovieWatchsList,
               ),
             );
+          } else if(state is DetailMovieError) {
+            return  Text(state.message); 
           } else {
-            return const Text('failed');
+            return const SizedBox();
           }
         },
       ),
@@ -72,7 +74,7 @@ class DetailContent extends StatefulWidget {
   final MovieDetail movie;
   final bool isAddedWatchlist;
 
-  DetailContent(this.movie, this.isAddedWatchlist);
+  const DetailContent(this.movie, this.isAddedWatchlist, {super.key});
 
   @override
   State<DetailContent> createState() => _DetailContentState();
@@ -93,7 +95,7 @@ class _DetailContentState extends State<DetailContent> {
           placeholder: (context, url) => const Center(
             child: CircularProgressIndicator(),
           ),
-          errorWidget: (context, url, error) => Icon(Icons.error),
+          errorWidget: (context, url, error) =>const Icon(Icons.error),
         ),
         Container(
           margin: const EdgeInsets.only(top: 48 + 8),
@@ -128,7 +130,7 @@ class _DetailContentState extends State<DetailContent> {
                                 if (!widget.isAddedWatchlist) {
                                   context.read<WatchlistMovieBloc>()
                                     .add(OnWatchlistMoviesAdd(widget.movie)) ;
-                                  print("OnWatchlistMoviesAdd");
+                                 
                                 } else {
                                   context.read<WatchlistMovieBloc>()
                                     .add(OnWatchlistMoviesRemove(widget.movie));
@@ -295,7 +297,7 @@ class _DetailContentState extends State<DetailContent> {
   String _showGenres(List<Genre> genres) {
     String result = '';
     for (var genre in genres) {
-      result += genre.name + ', ';
+      result += '${genre.name}, ';
     }
 
     if (result.isEmpty) {

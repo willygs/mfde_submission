@@ -12,7 +12,7 @@ class HomeNowPlayingMoviesLoading extends MovieListState{}
 class HomeNowPlayingMoviesError extends MovieListState {
   final String message;
  
-  HomeNowPlayingMoviesError(this.message);
+  const HomeNowPlayingMoviesError(this.message);
  
   @override
   List<Object> get props => [message];
@@ -20,7 +20,7 @@ class HomeNowPlayingMoviesError extends MovieListState {
 class HomeNowPlayingMoviesHasData extends MovieListState {
   final List<Movie> listNowPlaying;
  
-  HomeNowPlayingMoviesHasData(this.listNowPlaying);
+  const HomeNowPlayingMoviesHasData(this.listNowPlaying);
  
   @override
   List<Object> get props => [listNowPlaying];
@@ -31,7 +31,7 @@ class HomePopularMoviesLoading extends MovieListState {}
 class HomePopularMoviesError extends MovieListState {
   final String message;
  
-  HomePopularMoviesError(this.message);
+  const HomePopularMoviesError(this.message);
  
   @override
   List<Object> get props => [message];
@@ -39,7 +39,7 @@ class HomePopularMoviesError extends MovieListState {
 class HomePopularMoviesHasData extends MovieListState {
   final List<Movie> listPopular;
  
-  HomePopularMoviesHasData(this.listPopular);
+  const HomePopularMoviesHasData(this.listPopular);
  
   @override
   List<Object> get props => [listPopular];
@@ -50,7 +50,7 @@ class HomeTopRatedMoviesLoading extends MovieListState {}
 class HomeTopRatedMoviesError extends MovieListState {
   final String message;
  
-  HomeTopRatedMoviesError(this.message);
+  const HomeTopRatedMoviesError(this.message);
  
   @override
   List<Object> get props => [message];
@@ -58,7 +58,7 @@ class HomeTopRatedMoviesError extends MovieListState {
 class HomeTopRatedMoviesHasData extends MovieListState {
   final List<Movie> listTopRated;
  
-  HomeTopRatedMoviesHasData(this.listTopRated);
+  const HomeTopRatedMoviesHasData(this.listTopRated);
  
   @override
   List<Object> get props => [listTopRated];
@@ -69,7 +69,7 @@ class MovieListInitial extends MovieListState {
   final HomePopularMoviesEmpty homePopularMoviesEmpty;
   final HomeTopRatedMoviesEmpty homeTopRatedMoviesEmpty;
  
-  MovieListInitial(this.homeNowPlayingMoviesEmpty,this.homePopularMoviesEmpty,this.homeTopRatedMoviesEmpty);
+  const MovieListInitial(this.homeNowPlayingMoviesEmpty,this.homePopularMoviesEmpty,this.homeTopRatedMoviesEmpty);
 
   @override
   List<Object> get props => [homeNowPlayingMoviesEmpty,homePopularMoviesEmpty,homeTopRatedMoviesEmpty];

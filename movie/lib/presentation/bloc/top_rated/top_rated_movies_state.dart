@@ -12,7 +12,7 @@ class TopRatedMoviesLoading extends TopRatedMoviesState{}
 class TopRatedMoviesError extends TopRatedMoviesState {
   final String message;
  
-  TopRatedMoviesError(this.message);
+  const TopRatedMoviesError(this.message);
  
   @override
   List<Object> get props => [message];
@@ -20,7 +20,7 @@ class TopRatedMoviesError extends TopRatedMoviesState {
 class TopRatedMoviesHasData extends TopRatedMoviesState {
   final List<Movie> listTopRated;
  
-  TopRatedMoviesHasData(this.listTopRated);
+  const TopRatedMoviesHasData(this.listTopRated);
  
   @override
   List<Object> get props => [listTopRated];

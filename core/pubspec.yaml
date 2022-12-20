@@ -27,6 +27,8 @@ dependencies:
     path: ../search
   movie:
     path: ../movie
+  tv:
+    path: ../tv
 
 dev_dependencies:
   flutter_test:

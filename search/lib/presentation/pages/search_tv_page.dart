@@ -1,17 +1,13 @@
-import 'package:core/utils/state_enum.dart';
 import 'package:core/widgets/not_found_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:search/presentation/bloc/search_tv_bloc.dart';
-
-import '../../presentation/provider/tv_search_notifier.dart';
 import 'package:core/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import 'package:core/styles/text_styles.dart';
 
 class SearchTvPage extends StatelessWidget {
-  static const ROUTE_NAME = '/search-tv';
+ 
   const SearchTvPage({Key? key}) : super(key: key);
 
   @override
@@ -28,10 +24,6 @@ class SearchTvPage extends StatelessWidget {
             TextField(
               onChanged: (query) {
                 context.read<SearchTvBloc>().add(OnQueryChanged(query));
-              },
-              onSubmitted: (query) {
-                Provider.of<TvSearchNotifier>(context, listen: false)
-                    .fetchSearchTv(query);
               },
               decoration: const InputDecoration(
                   hintText: 'Search name',

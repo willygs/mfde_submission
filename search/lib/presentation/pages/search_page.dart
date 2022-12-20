@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:core/styles/text_styles.dart';
 
 class SearchPage extends StatelessWidget {
-  static const ROUTE_NAME = '/search';
+  
 
   const SearchPage({super.key});
 

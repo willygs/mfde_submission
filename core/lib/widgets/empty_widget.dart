@@ -8,8 +8,11 @@ class EmptyWidget extends StatelessWidget {
     return Expanded(
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children : const [
-            Icon(Icons.featured_play_list_outlined),
+            Icon(Icons.featured_play_list_outlined,size: 60,),
+            SizedBox(height: 10,),
             Text('Your Wishlist is Empty')
           ]
           

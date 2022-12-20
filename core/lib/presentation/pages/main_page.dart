@@ -1,14 +1,8 @@
-
-
-import 'package:about/about.dart';
 import 'package:core/styles/colors.dart';
+import 'package:core/utils/routes.dart';
 
-import '../../presentation/pages/home_movie_page.dart';
+import 'package:movie/presentation/pages/home_movie_page.dart';
 import '../../presentation/pages/home_tv_page.dart';
-import 'package:search/presentation/pages/search_page.dart';
-import 'package:search/presentation/pages/search_tv_page.dart';
-import '../../presentation/pages/watchlist_movies_page.dart';
-import '../../presentation/pages/watchlist_tv_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -58,19 +52,19 @@ class _MainPageState extends State<MainPage> {
               leading: const Icon(Icons.save_alt),
               title: const Text('Watchlist Movies'),
               onTap: () {
-                Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
+                Navigator.pushNamed(context, WATCHLIST_MOVIE_ROUTE);
               },
             ),
             ListTile(
               leading: const Icon(Icons.save_alt),
               title: const Text('Watchlist TV'),
               onTap: () {
-                Navigator.pushNamed(context, WatchlistTvPage.ROUTE_NAME);
+                Navigator.pushNamed(context, WATCHLIST_TV_ROUTE);
               },
             ),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, AboutPage.ROUTE_NAME);
+                Navigator.pushNamed(context, ABOUT_ROUTE);
               },
               leading: const Icon(Icons.info_outline),
               title: const Text('About'),
@@ -84,9 +78,9 @@ class _MainPageState extends State<MainPage> {
           IconButton(
             onPressed: () {
               if (bottomNavIndex == 0) {
-                Navigator.pushNamed(context, SearchPage.ROUTE_NAME);
+                Navigator.pushNamed(context, SEARCH_ROUTE);
               } else {
-                Navigator.pushNamed(context, SearchTvPage.ROUTE_NAME);
+                Navigator.pushNamed(context, SEARCH_TV_ROUTE);
               }
             },
             icon: const Icon(Icons.search),

@@ -41,6 +41,8 @@ dependencies:
   search:
     path: search
   sqflite: ^2.0.0+3
+  movie:
+    path: movie
 
 dev_dependencies:
   bloc_test: ^9.0.0

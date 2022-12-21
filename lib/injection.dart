@@ -26,7 +26,6 @@ import 'package:movie/domain/usecases/get_now_playing_movies.dart';
 import 'package:movie/domain/usecases/get_popular_movies.dart';
 import 'package:movie/domain/usecases/get_top_rated_movies.dart';
 import 'package:movie/presentation/bloc/detail/detail_movie_bloc.dart';
-import 'package:movie/presentation/bloc/movie_list_bloc.dart';
 import 'package:movie/presentation/bloc/now_playing/now_playing_movies_bloc.dart';
 import 'package:movie/presentation/bloc/popular_movies/popular_movies_bloc.dart';
 import 'package:movie/presentation/bloc/recommendation/recommendation_movies_bloc.dart';
@@ -105,7 +104,6 @@ void init() {
   //bloc 
   locator.registerFactory(() => SearchBloc(locator()));
   locator.registerFactory(() => SearchTvBloc(locator()));
-  locator.registerFactory(() => MovieListBloc(locator(), locator(), locator()));
   locator.registerFactory(() => NowPlayingMoviesBloc(locator()));
   locator.registerFactory(() => PopularMoviesBloc(locator()));
   locator.registerFactory(() => TopRatedMoviesBloc(locator()));

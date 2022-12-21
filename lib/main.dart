@@ -10,7 +10,6 @@ import 'package:movie/presentation/pages/movie_detail_page.dart';
 import 'package:movie/presentation/pages/popular_movies_page.dart';
 import 'package:tv/presentation/pages/popular_tv_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie/presentation/bloc/movie_list_bloc.dart';
 import 'package:movie/presentation/bloc/now_playing/now_playing_movies_bloc.dart';
 import 'package:movie/presentation/bloc/popular_movies/popular_movies_bloc.dart';
 import 'package:movie/presentation/bloc/top_rated/top_rated_movies_bloc.dart';
@@ -50,7 +49,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => di.locator<SearchBloc>(),),
         BlocProvider(create: (_) => di.locator<SearchTvBloc>()),
-        BlocProvider(create: (_)  => di.locator<MovieListBloc>()),
         BlocProvider(create: (_)=> di.locator<NowPlayingMoviesBloc>()),
         BlocProvider(create: (_) => di.locator<PopularMoviesBloc>()),
         BlocProvider(create: (_) => di.locator<TopRatedMoviesBloc>()),

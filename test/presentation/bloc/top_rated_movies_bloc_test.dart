@@ -7,7 +7,9 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:movie/domain/usecases/get_top_rated_movies.dart';
 import 'package:movie/presentation/bloc/top_rated/top_rated_movies_bloc.dart';
-import 'movie_list_bloc_test.mocks.dart';
+
+import 'top_rated_movies_bloc_test.mocks.dart';
+
 
 @GenerateMocks([GetTopRatedMovies])
 void main() {

@@ -7,11 +7,12 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:movie/domain/usecases/get_popular_movies.dart';
 import 'package:movie/presentation/bloc/popular_movies/popular_movies_bloc.dart';
-import 'movie_list_bloc_test.mocks.dart';
+
+import 'popular_movies_bloc_test.mocks.dart';
 
 @GenerateMocks([GetPopularMovies])
 void main() {
-  late MockGetPopularMovies mockGetPopularMovies;
+  late MockGetPopularMovies  mockGetPopularMovies;
   late PopularMoviesBloc popularMoviesBloc;
 
   setUp(() {

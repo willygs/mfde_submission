@@ -1,3 +1,3 @@
 workflows:
-  release-workflow:
+  default-workflow:
     name: Release

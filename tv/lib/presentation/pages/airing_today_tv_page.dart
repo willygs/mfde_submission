@@ -44,7 +44,10 @@ class _AiringTodayTvPageState extends State<AiringTodayTvPage> {
               itemCount: state.listAiringToday.length,
             );
           } else if (state is AiringTodayError) {
-            return const Text('Failed');
+            return Center(
+              key: const Key('error_message'),
+              child: Text(state.message),
+            );
           } else {
             return const SizedBox();
           }

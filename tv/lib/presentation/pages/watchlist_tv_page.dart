@@ -47,7 +47,6 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> with RouteAware {
               child: CircularProgressIndicator(),
             );
           } else if (state is WatchlistTvHasData) {
-            if (state.listWatchlist.isNotEmpty) {
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final tv = state.listWatchlist[index];
@@ -57,13 +56,16 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> with RouteAware {
                 },
                 itemCount: state.listWatchlist.length,
               );
-            } else {
-              return const EmptyWidget();
-            }
+           
           } else if (state is WatchlistTvError) {
-            return const Text('Failed');
+            return Center(
+                key: const Key('error_message'),
+                child: Text(state.message),
+              );
           } else {
-            return const EmptyWidget();
+            return const EmptyWidget(
+              key: Key('empty_widget'),
+            );
           }
         }),
       ),

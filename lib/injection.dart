@@ -43,7 +43,7 @@ import 'package:tv/presentation/bloc/popular/popular_tv_bloc.dart';
 import 'package:tv/presentation/bloc/recommendation/recommendation_tv_bloc.dart';
 import 'package:tv/presentation/bloc/top_rated/top_rated_tv_bloc.dart';
 import 'package:tv/presentation/bloc/watchlist/watchlist_tv_bloc.dart';
-
+import 'package:core/utils/security/ssl_pinning/http_ssl_pinning.dart';
 final locator = GetIt.instance;
 
 void init() {
@@ -98,8 +98,7 @@ void init() {
   // helper
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
 
-  // external
-  locator.registerLazySingleton(() => http.Client());
+ 
 
   //bloc 
   locator.registerFactory(() => SearchBloc(locator()));
@@ -119,5 +118,7 @@ void init() {
   locator.registerFactory(() => RecommendationTvBloc(locator()) );
   locator.registerFactory(() => WatchlistTvBloc(locator(), locator(), locator(), locator()));
 
+  //security
+  locator.registerLazySingleton(() => HttpSSLPinning.client);
 
 }

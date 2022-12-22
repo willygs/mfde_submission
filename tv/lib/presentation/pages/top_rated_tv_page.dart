@@ -44,7 +44,10 @@ class _TopRatedTvPageState extends State<TopRatedTvPage> {
               itemCount: state.listTopRatedTv.length,
             );
           } else if (state is TopRatedTvError) {
-            return const Text('Failed');
+            return Center(
+              key: const Key('error_message'),
+              child: Text(state.message),
+            );
           } else {
             return const SizedBox();
           }

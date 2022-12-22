@@ -1,6 +1,9 @@
 import 'package:core/styles/colors.dart';
 import 'package:core/styles/text_styles.dart';
+import 'package:core/utils/security/ssl_pinning/http_ssl_pinning.dart';
 import 'package:core/utils/utils.dart';
+import 'package:ditonton/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:tv/presentation/pages/airing_today_tv_page.dart';
 import 'package:core/presentation/pages/main_page.dart';
 import 'package:movie/presentation/bloc/detail/detail_movie_bloc.dart';
@@ -35,8 +38,14 @@ import 'package:tv/presentation/bloc/popular/popular_tv_bloc.dart';
 import 'package:tv/presentation/bloc/recommendation/recommendation_tv_bloc.dart';
 import 'package:tv/presentation/bloc/top_rated/top_rated_tv_bloc.dart';
 import 'package:tv/presentation/bloc/watchlist/watchlist_tv_bloc.dart';
-
-void main() {
+// import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  
+  await HttpSSLPinning.init();
   di.init();
   runApp(MyApp());
 }

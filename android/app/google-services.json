@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "355255457708",
+    "project_id": "mfde-submission",
+    "storage_bucket": "mfde-submission.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355255457708:android:dbed67193fa11f43070c09",
+        "android_client_info": {
+          "package_name": "com.dicoding.ditonton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355255457708-4ouj1vvrcbddk1q4lal725hljuts4mnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDECz-JpkcEzA6V-LyKbTx8ltLABXKducM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355255457708-4ouj1vvrcbddk1q4lal725hljuts4mnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

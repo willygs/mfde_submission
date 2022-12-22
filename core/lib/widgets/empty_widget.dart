@@ -6,6 +6,7 @@ class EmptyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
+       key: const Key('empty_widget'),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

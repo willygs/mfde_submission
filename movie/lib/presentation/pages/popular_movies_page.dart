@@ -45,7 +45,10 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
                 itemCount: state.listPopular.length,
               );
             } else if (state is PopularMoviesError) {
-              return const Text('Failed');
+              return Center(
+                key: const Key('error_message'),
+                child: Text(state.message),
+              );
             } else {
               return const SizedBox();
             }

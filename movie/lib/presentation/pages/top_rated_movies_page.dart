@@ -46,7 +46,10 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
                 itemCount: state.listTopRated.length,
               );
             } else if (state is TopRatedMoviesError) {
-              return const Text('Failed');
+              return Center(
+                key: const Key('error_message'),
+                child: Text(state.message),
+              );
             } else {
               return const SizedBox();
             }

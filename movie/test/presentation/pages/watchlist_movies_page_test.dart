@@ -1,6 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:core/domain/entities/movie.dart';
-import 'package:core/widgets/empty_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -32,7 +31,7 @@ void main() {
   Widget _makeTestableWidget() {
     return BlocProvider<WatchlistMovieBloc>.value(
       value: mockWatchlistMovieBloc,
-      child: MaterialApp(
+      child: const MaterialApp(
         home: WatchlistMoviesPage(),
       ),
     );
@@ -56,7 +55,7 @@ void main() {
     testWidgets('Page should display ListView when data is loaded',
         (WidgetTester tester) async {
       when(() => mockWatchlistMovieBloc.state)
-          .thenReturn(WatchlistMoviesHasData(<Movie>[]));
+          .thenReturn(const WatchlistMoviesHasData(<Movie>[]));
 
       final listViewFinder = find.byType(ListView);
 
@@ -68,9 +67,9 @@ void main() {
     testWidgets('Page should display text with message when Error',
         (WidgetTester tester) async {
       when(() => mockWatchlistMovieBloc.state)
-          .thenReturn(WatchlistMoviesError('Server Failure'));
+          .thenReturn(const WatchlistMoviesError('Server Failure'));
 
-      final textFinder = find.byKey(Key('error_message'));
+      final textFinder = find.byKey(const Key('error_message'));
 
       await tester.pumpWidget(_makeTestableWidget());
 

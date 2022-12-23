@@ -16,7 +16,7 @@ void main() {
   });
 
   final tTv = <Tv>[];
-  final query = 'faltu';
+  const query = 'faltu';
   test('should get list of tv from the repository', ()async {
     //arrange
     when(mockTvRepository.searchTv(query))

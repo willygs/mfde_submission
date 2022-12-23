@@ -35,7 +35,6 @@ import 'package:search/domain/usecases/search_movies.dart';
 import 'package:search/domain/usecases/search_tv.dart';
 import 'package:search/presentation/bloc/search_bloc.dart';
 import 'package:search/presentation/bloc/search_tv_bloc.dart';
-import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:tv/presentation/bloc/airing_today/airing_today_bloc.dart';
 import 'package:tv/presentation/bloc/detail/detail_tv_bloc.dart';

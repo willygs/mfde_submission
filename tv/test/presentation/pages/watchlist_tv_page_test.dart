@@ -31,7 +31,7 @@ void main() {
   Widget _makeTestableWidget() {
     return BlocProvider<WatchlistTvBloc>.value(
       value: mockWatchlistTvBloc,
-      child: MaterialApp(
+      child: const MaterialApp(
         home: WatchlistTvPage(),
       ),
     );
@@ -55,7 +55,7 @@ void main() {
     testWidgets('Page should display ListView when data is loaded',
         (WidgetTester tester) async {
       when(() => mockWatchlistTvBloc.state)
-          .thenReturn(WatchlistTvHasData(<Tv>[]));
+          .thenReturn(const WatchlistTvHasData(<Tv>[]));
 
       final listViewFinder = find.byType(ListView);
 
@@ -66,10 +66,10 @@ void main() {
 
      testWidgets('Page should display text with message when Error',
       (WidgetTester tester) async {
-    when(() => mockWatchlistTvBloc.state).thenReturn(WatchlistTvError('Server Failure'));
+    when(() => mockWatchlistTvBloc.state).thenReturn(const WatchlistTvError('Server Failure'));
     
 
-    final textFinder = find.byKey(Key('error_message'));
+    final textFinder = find.byKey(const Key('error_message'));
 
     await tester.pumpWidget(_makeTestableWidget());
 

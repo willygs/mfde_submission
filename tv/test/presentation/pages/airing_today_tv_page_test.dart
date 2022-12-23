@@ -31,7 +31,7 @@ void main() {
   Widget _makeTestableWidget() {
     return BlocProvider<AiringTodayBloc>.value(
       value: mockAiringTodayBloc,
-      child: MaterialApp(
+      child: const MaterialApp(
         home: AiringTodayTvPage(),
       ),
     );
@@ -55,7 +55,7 @@ void main() {
     testWidgets('Page should display ListView when data is loaded',
         (WidgetTester tester) async {
       when(() => mockAiringTodayBloc.state)
-          .thenReturn(AiringTodayHasData(<Tv>[]));
+          .thenReturn(const AiringTodayHasData(<Tv>[]));
 
       final listViewFinder = find.byType(ListView);
 
@@ -66,10 +66,10 @@ void main() {
 
      testWidgets('Page should display text with message when Error',
       (WidgetTester tester) async {
-    when(() => mockAiringTodayBloc.state).thenReturn(AiringTodayError('Server Failure'));
+    when(() => mockAiringTodayBloc.state).thenReturn(const AiringTodayError('Server Failure'));
     
 
-    final textFinder = find.byKey(Key('error_message'));
+    final textFinder = find.byKey(const Key('error_message'));
 
     await tester.pumpWidget(_makeTestableWidget());
 

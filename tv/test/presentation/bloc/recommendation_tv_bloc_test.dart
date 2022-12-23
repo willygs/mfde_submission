@@ -25,13 +25,13 @@ void main() {
     expect(recommendationTvBloc.state, RecommendationTvEmpty());
   });
 
-  final int id = 94605;
+  const int id = 94605;
 
   final tTvModel = Tv(
-    genreIds: [16, 10765, 10759, 18],
+    genreIds: const [16, 10765, 10759, 18],
     name: 'Arcane',
     id: 94605,
-    originCountry: ["US"],
+    originCountry: const ["US"],
     originalLanguage: 'en',
     originalName: 'Arcane',
     overview:
@@ -64,13 +64,13 @@ final tTvList = <Tv>[tTvModel];
       'Should emit [Loading, Error] when get Recommendation tv is unsuccessful',
       build: () {
         when(mockGetTvRecommendations.execute(id))
-            .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
+            .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
         return recommendationTvBloc;
       },
       act: (bloc) => bloc.add(OnRecommendationTv(id)),
       expect: () => [
         RecommendationTvLoading(),
-        RecommendationTvError('Server Failure')
+        const RecommendationTvError('Server Failure')
       ],
       verify: (bloc) {
         verify(mockGetTvRecommendations.execute(id));
@@ -81,7 +81,7 @@ final tTvList = <Tv>[tTvModel];
       'Should emit [Loading, Empty] when get Recommendation is empty',
       build: () {
         when(mockGetTvRecommendations.execute(id))
-            .thenAnswer((_) async => Right([]) );
+            .thenAnswer((_) async => const Right([]) );
         return recommendationTvBloc;
       },
       act: (bloc) => bloc.add(OnRecommendationTv(id)),

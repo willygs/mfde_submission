@@ -31,7 +31,7 @@ void main() {
   final tMovieModel = Movie(
     adult: false,
     backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
-    genreIds: [14, 28],
+    genreIds: const [14, 28],
     id: 557,
     originalTitle: 'Spider-Man',
     overview:
@@ -69,13 +69,13 @@ void main() {
       'Should emit [Loading, Error] when get now playing is unsuccessful',
       build: () {
         when(mockGetNowPlayingMovies.execute())
-            .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
+            .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
         return nowPlayingMoviesBloc;
       },
       act: (bloc) => bloc.add(OnNowPlayingMovies()),
       expect: () => [
         NowPlayingMoviesLoading(),
-        NowPlayingMoviesError('Server Failure')
+        const NowPlayingMoviesError('Server Failure')
       ],
       verify: (bloc) {
         verify(mockGetNowPlayingMovies.execute());
@@ -86,7 +86,7 @@ void main() {
       'Should emit [Loading, Empty] when get now playing is empty',
       build: () {
         when(mockGetNowPlayingMovies.execute())
-            .thenAnswer((_) async => Right([]) );
+            .thenAnswer((_) async => const Right([]) );
         return nowPlayingMoviesBloc;
       },
       act: (bloc) => bloc.add(OnNowPlayingMovies()),

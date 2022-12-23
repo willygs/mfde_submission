@@ -25,12 +25,12 @@ void main() {
     expect(recommendationMoviesBloc.state, RecommendationMoviesEmpty());
   });
 
-  final int id = 1;
+  const int id = 1;
 
   final tMovieModel = Movie(
     adult: false,
     backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
-    genreIds: [14, 28],
+    genreIds: const [14, 28],
     id: 557,
     originalTitle: 'Spider-Man',
     overview:
@@ -68,13 +68,13 @@ void main() {
       'Should emit [Loading, Error] when get recommendation movies is unsuccessful',
       build: () {
         when(mockGetMovieRecommendations.execute(id))
-            .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
+            .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
         return recommendationMoviesBloc;
       },
       act: (bloc) => bloc.add(OnRecommendationMovies(id)),
       expect: () => [
         RecommendationMoviesLoading(),
-        RecommendationMoviesError('Server Failure')
+        const RecommendationMoviesError('Server Failure')
       ],
       verify: (bloc) {
         verify(mockGetMovieRecommendations.execute(id));
@@ -85,7 +85,7 @@ void main() {
       'Should emit [Loading, Empty] when get popular is empty',
       build: () {
         when(mockGetMovieRecommendations.execute(id))
-            .thenAnswer((_) async => Right([]));
+            .thenAnswer((_) async => const Right([]));
         return recommendationMoviesBloc;
       },
       act: (bloc) => bloc.add(OnRecommendationMovies(id)),

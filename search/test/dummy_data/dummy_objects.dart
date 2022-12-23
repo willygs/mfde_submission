@@ -10,7 +10,7 @@ import 'package:core/domain/entities/tv_detail.dart';
 final testMovie = Movie(
   adult: false,
   backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
-  genreIds: [14, 28],
+  genreIds: const [14, 28],
   id: 557,
   originalTitle: 'Spider-Man',
   overview:
@@ -26,7 +26,7 @@ final testMovie = Movie(
 
 final testMovieList = [testMovie];
 
-final testMovieDetail = MovieDetail(
+const testMovieDetail =  MovieDetail(
   adult: false,
   backdropPath: 'backdropPath',
   genres: [Genre(id: 1, name: 'Action')],
@@ -48,7 +48,7 @@ final testWatchlistMovie = Movie.watchlist(
   overview: 'overview',
 );
 
-final testMovieTable = MovieTable(
+const testMovieTable = MovieTable(
   id: 1,
   title: 'title',
   posterPath: 'posterPath',
@@ -64,10 +64,10 @@ final testMovieMap = {
 
 //test dummy tv
 final testTv = Tv(
-    genreIds: [16, 10765, 10759, 18],
+    genreIds: const [16, 10765, 10759, 18],
     name: 'Arcane',
     id: 94605,
-    originCountry: ["US"],
+    originCountry: const ["US"],
     originalLanguage: 'en',
     originalName: 'Arcane',
     overview:
@@ -81,7 +81,7 @@ final testTvList = [testTv];
 final testTvDetail = TvDetail(
     adult: false,
     backdropPath: "/7q448EVOnuE3gVAx24krzO7SNXM.jpg",
-    genres: [Genre(id: 10764, name: "Reality")],
+    genres: const [Genre(id: 10764, name: "Reality")],
     homepage:
         "https://www.hulu.com/series/the-damelio-show-ad993806-7961-4eb3-9f92-e7b9a349ae22",
     id: 130392,
@@ -119,7 +119,7 @@ final testTvDetail = TvDetail(
     type: "Reality",
     voteAverage: 8.994,
     voteCount: 3148);
-final testTvTable = TvTable(
+const testTvTable =  TvTable(
   id: 130392,
   name: "The D'Amelio Show",
   posterPath: "/z0iCS5Znx7TeRwlYSd4c01Z0lFx.jpg",

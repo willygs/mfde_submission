@@ -26,10 +26,10 @@ void main() {
   });
 
   final tTvModel = Tv(
-    genreIds: [16, 10765, 10759, 18],
+    genreIds: const [16, 10765, 10759, 18],
     name: 'Arcane',
     id: 94605,
-    originCountry: ["US"],
+    originCountry: const ["US"],
     originalLanguage: 'en',
     originalName: 'Arcane',
     overview:
@@ -39,7 +39,7 @@ void main() {
     voteCount: 2733);
 
     final tTvList = <Tv>[tTvModel];
-    final tQuery = 'Arcane';
+    const tQuery = 'Arcane';
 
     blocTest<SearchTvBloc, SearchTvState>(
     'Should emit [Loading, HasData] when data is gotten successfully',
@@ -48,7 +48,7 @@ void main() {
           .thenAnswer((_) async => Right(tTvList));
       return searchTvBloc;
     },
-    act: (bloc) => bloc.add(OnQueryChanged(tQuery)),
+    act: (bloc) => bloc.add(const OnQueryChanged(tQuery)),
     wait: const Duration(milliseconds: 500),
     expect: () => [SearchTvLoading(), SearchTvHasData(tTvList)],
     verify: (bloc) {
@@ -60,12 +60,12 @@ void main() {
     'Should emit [Loading, Error] when get search is unsuccessful',
     build: () {
       when(mockSearchTv.execute(tQuery))
-          .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
+          .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
       return searchTvBloc;
     },
-    act: (bloc) => bloc.add(OnQueryChanged(tQuery)),
+    act: (bloc) => bloc.add(const OnQueryChanged(tQuery)),
     wait: const Duration(milliseconds: 500),
-    expect: () => [SearchTvLoading(), SearchTvError('Server Failure')],
+    expect: () => [SearchTvLoading(), const SearchTvError('Server Failure')],
     verify: (bloc) {
       verify(mockSearchTv.execute(tQuery));
     },

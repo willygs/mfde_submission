@@ -18,14 +18,14 @@ void main() {
   test('should save watchlist tv to the repository', () async {
     //arrangge
     when(mockTvRepository.saveWatchlistTv(testTvDetail))
-      .thenAnswer((_) async => Right('Added to Watchlist'));
+      .thenAnswer((_) async => const Right('Added to Watchlist'));
 
     //act 
     final result = await usecase.execute(testTvDetail);
 
     //assert
     verify(mockTvRepository.saveWatchlistTv(testTvDetail));
-    expect(result, Right('Added to Watchlist'));
+    expect(result, const Right('Added to Watchlist'));
   });
 
 }

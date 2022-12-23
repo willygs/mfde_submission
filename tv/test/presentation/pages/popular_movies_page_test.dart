@@ -31,7 +31,7 @@ void main() {
   Widget _makeTestableWidget() {
     return BlocProvider<PopularMoviesBloc>.value(
       value: mockPopularMoviesBloc,
-      child: MaterialApp(
+      child: const MaterialApp(
         home: PopularMoviesPage(),
       ),
     );
@@ -55,7 +55,7 @@ void main() {
     testWidgets('Page should display ListView when data is loaded',
         (WidgetTester tester) async {
       when(() => mockPopularMoviesBloc.state)
-          .thenReturn(PopularMoviesHasData(<Movie>[]));
+          .thenReturn(const PopularMoviesHasData(<Movie>[]));
 
       final listViewFinder = find.byType(ListView);
 
@@ -66,10 +66,10 @@ void main() {
 
      testWidgets('Page should display text with message when Error',
       (WidgetTester tester) async {
-    when(() => mockPopularMoviesBloc.state).thenReturn(PopularMoviesError('Server Failure'));
+    when(() => mockPopularMoviesBloc.state).thenReturn(const PopularMoviesError('Server Failure'));
     
 
-    final textFinder = find.byKey(Key('error_message'));
+    final textFinder = find.byKey(const Key('error_message'));
 
     await tester.pumpWidget(_makeTestableWidget());
 

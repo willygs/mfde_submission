@@ -25,10 +25,10 @@ void main() {
   });
 
   final tTvModel = Tv(
-    genreIds: [16, 10765, 10759, 18],
+    genreIds: const [16, 10765, 10759, 18],
     name: 'Arcane',
     id: 94605,
-    originCountry: ["US"],
+    originCountry: const ["US"],
     originalLanguage: 'en',
     originalName: 'Arcane',
     overview:
@@ -61,13 +61,13 @@ final tTvList = <Tv>[tTvModel];
       'Should emit [Loading, Error] when get to rated tv is unsuccessful',
       build: () {
         when(mockGetTopRatedTv.execute())
-            .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
+            .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
         return topRatedTvBloc;
       },
       act: (bloc) => bloc.add(OnTopRatedTv()),
       expect: () => [
         TopRatedTvLoading(),
-        TopRatedTvError('Server Failure')
+        const TopRatedTvError('Server Failure')
       ],
       verify: (bloc) {
         verify(mockGetTopRatedTv.execute());
@@ -78,7 +78,7 @@ final tTvList = <Tv>[tTvModel];
       'Should emit [Loading, Empty] when get top rated is empty',
       build: () {
         when(mockGetTopRatedTv.execute())
-            .thenAnswer((_) async => Right([]) );
+            .thenAnswer((_) async => const Right([]) );
         return topRatedTvBloc;
       },
       act: (bloc) => bloc.add(OnTopRatedTv()),

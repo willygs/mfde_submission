@@ -25,7 +25,7 @@ void main() {
     expect(detailTvBloc.state, DetailTvEmpty());
   });
 
-  final tId = 130392;
+  const tId = 130392;
   group('Detail Tv', () {
     blocTest<DetailTvBloc, DetailTvState>(
       'Should emit [Loading, HasData] when data is gotten successfully',
@@ -34,7 +34,7 @@ void main() {
             .thenAnswer((_) async => Right(testTvDetail));
         return detailTvBloc;
       },
-      act: (bloc) => bloc.add(OnDetailTv(tId)),
+      act: (bloc) => bloc.add(const OnDetailTv(tId)),
       wait: const Duration(milliseconds: 100),
       expect: () => [
         DetailTvLoading(),
@@ -49,13 +49,13 @@ void main() {
       'Should emit [Loading, Error] when get detail Tv is unsuccessful',
       build: () {
         when(mockGetTvDetail.execute(tId))
-            .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
+            .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
         return detailTvBloc;
       },
-      act: (bloc) => bloc.add(OnDetailTv(tId)),
+      act: (bloc) => bloc.add(const OnDetailTv(tId)),
       expect: () => [
         DetailTvLoading(),
-        DetailTvError('Server Failure')
+        const DetailTvError('Server Failure')
       ],
       verify: (bloc) {
         verify(mockGetTvDetail.execute(tId));

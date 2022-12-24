@@ -27,7 +27,7 @@ class TvDetailResponse extends Equatable {
     });
 
     final bool adult;
-    final String backdropPath;
+    final String? backdropPath;
     final List<GenreModel> genres;
     final String homepage;
     final int id;

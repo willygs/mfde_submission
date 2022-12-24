@@ -5,9 +5,8 @@ class EmptyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-       key: const Key('empty_widget'),
-      child: Center(
+    return Center(
+        key: const Key('empty_widget'),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -16,9 +15,7 @@ class EmptyWidget extends StatelessWidget {
             SizedBox(height: 10,),
             Text('Your Wishlist is Empty')
           ]
-          
         ),
-      ),
     );
   }
 }

@@ -60,7 +60,7 @@ class SearchTvPage extends StatelessWidget {
                   ),
                 ); 
                 } else{
-                  return const NotFoundWidget();
+                  return const Expanded(child: NotFoundWidget());
                 }
                 
               } else if(state is SearchTvError){

@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 
 class TvDetail extends Equatable {
   final bool adult;
-  final String backdropPath;
+  final String? backdropPath;
   final List<Genre> genres;
   final String homepage;
   final int id;

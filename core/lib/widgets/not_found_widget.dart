@@ -5,8 +5,7 @@ class NotFoundWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Center(
+    return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -15,9 +14,7 @@ class NotFoundWidget extends StatelessWidget {
             SizedBox(height: 10,),
             Text('Oops! No Data Found')
           ]
-          
         ),
-      ),
     );
   }
 }
